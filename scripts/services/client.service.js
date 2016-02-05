@@ -22,4 +22,12 @@ angular.module('vClient', [])
     this.getById = function (id) {
         return $http.get(base + '/' + id);
     };
+
+    this.put = function (id, params) {
+        return $http.put(base + '/' + id, params);
+    };
+
+    this.delete = function (id) {
+        return $http.delete(base + '/' + id);
+    };
 });

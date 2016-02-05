@@ -33,9 +33,23 @@ angular.module('myApp')
             console.log(response);
         });
 
+    //ClientService.put(1, {firstName: 'Kees'})
+    //    .then(function promiseSuccessHandler(response) {
+    //        $scope.clients[0] = response.data;
+    //    }, function promiseErrorHandler(response) {
+    //        console.log(response);
+    //    });
+
+    //ClientService.delete(1)
+    //    .then(function promiseSuccessHandler(response) {
+    //        console.log(response.data.message);
+    //    }, function promiseErrorHandler(response) {
+    //        console.log(response);
+    //    });
+
     $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
 
     $scope.redirectTo = function (url) {
         $location.path(url);
-    }
+    };
 });
