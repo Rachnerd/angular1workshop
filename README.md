@@ -35,5 +35,3 @@ At the end of this assignment routes/controllers are created and configured.
 1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
 
 1.5 - Add PUT and DELETE functionality in the ClientService and test if it works.
-
-1.6 - 
