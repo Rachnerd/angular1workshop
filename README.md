@@ -27,8 +27,11 @@ The focus of the first assignment is routing and the use of controllers/services
 At the end of this assignment routes/controllers are created and configured.
 
 1.1 - Display a list of clients in the HomePage using [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat).
+
 1.2 - Make HomeCtrl GET a client by id through the ClientService (remote url: /clients/1).
+
 1.3 - Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
+
 1.4 - Make ClientCtrl handle the /client/:id route and create and assign a client template.
 1.5 - Move the get by id call from HomeCtrl to ClientCtrl.
 1.6 - Visualize the client in the client template based on the id in the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
