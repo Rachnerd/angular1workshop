@@ -17,8 +17,11 @@
     <script src="lib/fake-backend.js"></script>
     <!--Application-->
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/home.controller.js"></script>
 </head>
+<!-- Our App module -->
 <body ng-app="myApp">
+    <!-- ng-view is an Angular directive where the router will output the assigned template based on url (see $routeProvider configs)-->
     <div ng-view=""></div>
 </body>
 </html>
