@@ -33,7 +33,11 @@ At the end of this assignment routes/controllers are created and configured.
 1.3 - Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
 
 1.4 - Make ClientCtrl handle the /client/:id route and create and assign a client template.
+
 1.5 - Move the get by id call from HomeCtrl to ClientCtrl.
+
 1.6 - Visualize the client in the client template based on the id in the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
+
 1.7 - Add a click handler to every user on the Home page that will redirect ([$location](https://docs.angularjs.org/api/ng/service/$location)) to the appropriate client/:id url.
+
 1.8 - Add PUT and DELETE functionality in the ClientService and test if it works.
