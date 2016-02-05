@@ -6,6 +6,9 @@
  *  Module creation without dependencies.
  */
 angular.module('vClient', [])
+/**
+ *  Service that contains all client related backend communication.
+ */
 .service('ClientService', function ($http) {
     var base = '/clients';
     /**

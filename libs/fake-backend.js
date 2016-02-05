@@ -18,9 +18,7 @@ angular.module('fakeBackend', ['ngMockE2E'])
  *  Simple factory that returns some Classes to simulate backend objects.
  */
 .factory('BackendClasses' , function () {
-    // Initial Client id
     var id = 1;
-    // Client class
     function Client (firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,6 +52,12 @@ angular.module('fakeBackend', ['ngMockE2E'])
  *  BackendClasses  -   Factory that holds the backend classes.
  */
 .service('BackendData', function (BackendClasses) {
+    var Client = BackendClasses.Client,
+        Contract = BackendClasses.Contract,
+        Usage = BackendClasses.Usage;
+
+    this.clients = [];
+
     function getDate(day, month, year) {
         var date = new Date();
         date.setMonth(month - 1);
@@ -62,14 +66,12 @@ angular.module('fakeBackend', ['ngMockE2E'])
         return date;
     }
 
-    this.clients = [];
-    var Client = BackendClasses.Client,
-        Contract = BackendClasses.Contract,
-        Usage = BackendClasses.Usage,
-        client1 = new Client('Jan', 'Berg'),
+    var client1 = new Client('Jan', 'Berg'),
         client2 = new Client('Karel', 'de Vries');
+
     client1.contract = new Contract(getDate(1, 5, 2014), getDate(1, 5, 2016), 1000, 1000, 3000);
     client1.contract.usages['February'] = new Usage(232, 123, 2100);
+
     this.clients.push(client1);
     this.clients.push(client2);
 })
