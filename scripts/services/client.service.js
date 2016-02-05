@@ -18,4 +18,8 @@ angular.module('vClient', [])
     this.get = function () {
         return $http.get(base);
     };
+
+    this.getById = function (id) {
+        return $http.get(base + '/' + id);
+    };
 });
