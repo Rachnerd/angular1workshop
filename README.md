@@ -22,12 +22,25 @@ Start a web server and open the index.html in localhost.
 ## Debugging
 Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
 
-## Assignment 1
-- Display a list of clients in the HomePage using [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat).
-- Make HomeCtrl GET a client by id through the ClientService (remote url: /clients/1).
-- Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
-- Make ClientCtrl handle the /client/:id route and create and assign a client template.
-- Move the get by id call from HomeCtrl to ClientCtrl.
-- Visualize the client in the client template based on the id in the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
+## Assignment 2
+The focus of this assignment is data binding and directives.
 
-Next assignment in next repo.
+2.1 - Create a list in the Home template that renders the clients using [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat).
+
+2.2 - Add click event to each client and make the click redirect to the client/:id page with the appropriate id [$location](https://docs.angularjs.org/api/ng/service/$location).
+
+2.3 - In the client template visualize all client properties including contract and usage.
+
+2.4 - Create an edit button that allows the user to edit the first and last name of a person. [Two-way binding](https://docs.angularjs.org/api/ng/directive/ngModel)
+
+2.5 - When in edit mode, create a save button that will send the PUT request to the server through the ClientService.
+
+2.6 - Create a directive called "redirect" (scripts/directives/redirectTo.directive.js) and configure it so it works like an attribute (restrict A).
+
+2.7 - In the directive's controller function, give the scope a "to" function with url param (use $location like in HomeCtrl).
+
+2.8 - Now in stead of letting the HomeCtrl change the route on click of a client, let the directive redirect do it.
+ Client element will still have a click listener, but the redirect attribute in the html element will let the directive inject the "to" function for you (and not the HomeCtrl). So ng-click="to(url)".
+
+2.6 - Create a directive scripts/directives/header.directive.js Configure the directive so it becomes an Element (restrict: 'E') and isolate the scope.
+
