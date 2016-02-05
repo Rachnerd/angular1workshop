@@ -13,5 +13,5 @@ angular.module('myApp')
     })
 })
 .controller('HomeCtrl', function ($scope) {
-    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.'
+    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
 });
