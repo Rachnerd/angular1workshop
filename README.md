@@ -1,6 +1,6 @@
 # angular1workshop
 This workshop serves as an introduction to the Angular framework. During this workshop there will be requests sent to 
-the [fakeBacked](../master/libs/fake-backed.js).  The fake-backend should not be edited, but it's recommended to take a
+the [fakeBacked](../master/libs/fake-backend.js).  The fake-backend should not be edited, but it's recommended to take a
 look into it.
 
 ## Content
