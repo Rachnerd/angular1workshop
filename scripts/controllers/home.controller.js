@@ -21,7 +21,6 @@ angular.module('myApp')
  *  ClientService   -   Custom service in vClient module (scripts/services/client.service.js).
  */
 .controller('HomeCtrl', function ($scope, ClientService) {
-    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
     /**
      *  Syntax: promise
      *              .then(successFn, errorFn);
@@ -32,4 +31,6 @@ angular.module('myApp')
         }, function promiseErrorHandler(response) {
             console.log(response);
         });
+
+    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
 });
