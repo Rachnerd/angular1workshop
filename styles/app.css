@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 75%;
+    position: relative;
+    margin: 0 auto;
+    min-width: 1080px;
+}
+header {
+    background-color: #e60000;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    postion: relative;
+    min-height: 8em;
+    min-height: 8em;
+}
+header .menu-icon {
+    position: absolute;
+    right: .5em;
+    top: .2em;
+    cursor: pointer;
+    border: 1px solid #DDD;
+    border-radius: .2em;
+    font-size: 6em;
+}
+header #menu {
+    position: absolute;
+    right: 1em;
+    top: 7.4em;
+    width: 10em;
+    border: 1px solid #DDD;
+    border-radius: .2em;
+}
+header #menu .menu-item {
+    cursor: pointer;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+header #menu .menu-item.active {
+    cursor: auto;
+    font-weight: bold;
+}
+header #menu:focus {
+    outline: none;
+}
+.client header i {
+    font-size: 6em;
+}
+.client header h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.client .content {
+    height: 20em;
+}
+.client .square {
+    padding-top: 1em;
+    float: left;
+    width: 33%;
+    height: 10em;
+    text-align: center;
+    position: relative;
+}
+
+.client .square .inner-square {
+    width: 15em;
+    height: 15em;
+    line-height: 14em;
+    border: 1px solid #DDD;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2em;
+}
+
+.client .content .square .inner-square i{
+    font-weight: bold;
+    font-size: 4em;
+    position: relative;
+    top: .5em;
+    z-index: 100;
+}
+.client .content .square h3{
+    font-size: 1.5em;
+    position: relative;
+    top: .5em;
+    z-index: 100;
+}
+.client .content .square .inner-square .fill {
+    background-color: #e60000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    top: 100%;
+    z-index:9;
+}
+.client .contract {
+    padding-top: 2em;
+    width: 100%;
+    margin: 0 auto;
+    height: 18em;
+}
+.client .contract .progress {
+    width: 50%;
+    height: 2em;
+    margin: 0 auto;
+    border: 1px solid #DDD;
+    position: relative;
+    overflow: hidden;
+    top: 7.5em;
+    color: white;
+}
+.client .contract .progress .fill{
+    width: 100%;
+    height: 2em;
+    position: relative;
+    background-color: #e60000;
+    left: -100%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.client .contract i {
+    font-size: 15em;
+}
+.client .contract .progress .fill p{
+    position: relative;
+    right: 0;
+    top: .5em;
+    right: 1em;
+    float: right;
+}
+.client .contract .date{
+    float: left;
+    padding-top: 8em;
+    padding-left: 6em;
+}
+.client .contract .date.end{
+    float: right;
+
+}
