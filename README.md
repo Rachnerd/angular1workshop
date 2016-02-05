@@ -33,3 +33,4 @@ At the end of this assignment routes/controllers are created and configured.
 - Move the get by id call from HomeCtrl to ClientCtrl.
 - Visualize the client in the client template based on the id in the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
 - Add a click handler to every user on the Home page that will redirect ([$location](https://docs.angularjs.org/api/ng/service/$location)) to the appropriate client/:id url.
+- Add PUT and DELETE functionality in the ClientService and test if it works.

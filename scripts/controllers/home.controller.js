@@ -28,6 +28,7 @@ angular.module('myApp')
     ClientService.get()
         .then(function promiseSuccessHandler(response) {
             console.log(response.data); // f12 developer tools console.
+            $scope.clients = response.data;
         }, function promiseErrorHandler(response) {
             console.log(response);
         });
