@@ -18,11 +18,15 @@ angular.module('vClient', [])
     this.get = function () {
         return $http.get(base);
     };
-
+    /*
+     *  Assignment 1.3
+     */
     this.getById = function (id) {
         return $http.get(base + '/' + id);
     };
-
+    /*
+     *  Assignment 1.5
+     */
     this.put = function (id, params) {
         return $http.put(base + '/' + id, params);
     };

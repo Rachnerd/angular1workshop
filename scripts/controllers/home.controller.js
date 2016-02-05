@@ -20,7 +20,7 @@ angular.module('myApp')
  *  $scope  -   JS object that serves as the ViewModel of the home page.
  *  ClientService   -   Custom service in vClient module (scripts/services/client.service.js).
  */
-.controller('HomeCtrl', function ($scope, ClientService, $location) {
+.controller('HomeCtrl', function ($scope, ClientService) {
     /**
      *  Syntax: promise
      *              .then(successFn, errorFn);
@@ -28,14 +28,15 @@ angular.module('myApp')
     ClientService.get()
         .then(function promiseSuccessHandler(response) {
             console.log(response.data); // f12 developer tools console.
-            $scope.clients = response.data;
         }, function promiseErrorHandler(response) {
             console.log(response);
         });
-
+    /*
+     *  Assignment 1.5 test
+     */
     //ClientService.put(1, {firstName: 'Kees'})
     //    .then(function promiseSuccessHandler(response) {
-    //        $scope.clients[0] = response.data;
+    //        console.log(response.data);
     //    }, function promiseErrorHandler(response) {
     //        console.log(response);
     //    });
@@ -48,8 +49,4 @@ angular.module('myApp')
     //    });
 
     $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
-
-    $scope.redirectTo = function (url) {
-        $location.path(url);
-    };
 });
