@@ -23,11 +23,13 @@ Start a web server and open the index.html in localhost.
 Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
 
 ## Assignment 1
+The focus of the first assignment is routing and the use of controllers/services.
+At the end of this assignment routes/controllers are created and configured.
+
 - Display a list of clients in the HomePage using [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat).
 - Make HomeCtrl GET a client by id through the ClientService (remote url: /clients/1).
 - Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
 - Make ClientCtrl handle the /client/:id route and create and assign a client template.
 - Move the get by id call from HomeCtrl to ClientCtrl.
 - Visualize the client in the client template based on the id in the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
-
-Next assignment in next repo.
+- Add a click handler to every user on the Home page that will redirect ([$location](https://docs.angularjs.org/api/ng/service/$location)) to the appropriate client/:id url.
