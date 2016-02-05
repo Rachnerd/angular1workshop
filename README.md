@@ -4,5 +4,5 @@ the fake backend located in ./lib/fake-backend.  The fake-backend should not be 
 look into it.
 
 ## Content
-This branch contains the base code of the workshop. This base consists of our application module [myApp](../blob/master/app.js) and one 
-controller named [HomeCtrl](../blob/master/scripts/controllers/home.controller.js).
+This branch contains the base code of the workshop. This base consists of our application module [myApp](../master/app.js) and one 
+controller named [HomeCtrl](../master/scripts/controllers/home.controller.js).
