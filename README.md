@@ -30,16 +30,20 @@ At the end of this assignment routes/controllers are created and configured.
 ```
 Create a new ClientCtrl attached to myApp module in a new file (scripts/controllers/client.controller.js).
 ```
+Tips
+- Copy home controller and configure it.
 1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
 Let ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
-1.3 - If we want to load an individual client for the client page, we need to add a getByid function to our ClientService.
+1.3 - If we want to load an individual client for the client page, we need to add a getById function to our ClientService.
 ```
 Add get by id functionality to the ClientService (remote url: '/clients/' + id)
 ```
-1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
-
+1.4 - To test our get by id functionality, we need to let the ClientCtrl retrieve a param from the route.
+```
+Retrieve a client based on the id of the url and log it ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
+```
 1.5 - Add PUT and DELETE functionality in the ClientService and test if it works.
 
 1.6 - Create a service called ClientLoader that contains a load function and a client variable.
