@@ -14,7 +14,7 @@ angular.module('myApp', ['fakeBackend', 'ngRoute', 'vClient'])
      true    ->  libs/fakeBackend.js (in .config) logs all request handling on debug level.
  */
 .config(function($logProvider) {
-    $logProvider.debugEnabled(false);
+    $logProvider.debugEnabled(true);
 })
 /**
  *  $routeProvider  -   Provider for routing that configures all possible routes.

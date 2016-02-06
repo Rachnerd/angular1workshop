@@ -93,7 +93,7 @@ angular.module('fakeBackend', ['ngMockE2E'])
         for(var i in clientsWithoutContracts) {
             delete clientsWithoutContracts[i].contract;
         }
-        return [200, clientsWithoutContracts, {}];
+        return [200, clientsWithoutContracts];
     });
 
     /**

@@ -30,7 +30,7 @@ At the end of this assignment routes/controllers are created and configured.
 
 1.2 - Make ClientCtrl handle the /client/:id route and create and assign a client template.
 
-1.3 - Add get by id functionality to the ClientService (remote url: /clients/id)
+1.3 - Add get by id functionality to the ClientService (remote url: '/clients/' + id)
 
 1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
 

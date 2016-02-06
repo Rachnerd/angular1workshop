@@ -32,5 +32,5 @@ angular.module('myApp')
             console.log(response);
         });
 
-    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
+    $scope.welcomeText = 'Open developer tools -> console';
 });
