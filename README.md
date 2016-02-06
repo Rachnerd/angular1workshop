@@ -26,7 +26,8 @@ Open developer tools in your browser (chrome/ff -> f12, safari -> enable develop
 The focus of the first assignment is routing and the use of controllers/services/factories.
 At the end of this assignment routes/controllers are created and configured.
 
-1.1 - Before we can add another page we have to create a new controller.
+###1.1
+Before we can add another page we have to create a new controller.
 ```
 Create a new ClientCtrl attached to myApp module in a new file (scripts/controllers/client.controller.js).
 ```
