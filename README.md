@@ -65,7 +65,7 @@ being called, we can set a condition in our routing config for loading the route
 Create a resolve function in the Client route config.
 ```
 Tips
-- ```javascript
+```javascript
     resolve: {
         client: function () {
             return true; // Expects a promise that determines of the route will succeed.
