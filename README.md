@@ -28,9 +28,9 @@ At the end of this assignment routes/controllers are created and configured.
 
 1.1 - Before we can add another page we have to create a new controller.
 ```
-Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
+Create a new ClientCtrl attached to myApp module in a new file (scripts/controllers/client.controller.js).
 ```
-1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl).
+1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
 Make ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
