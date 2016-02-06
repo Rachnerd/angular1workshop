@@ -66,6 +66,7 @@ Create a resolve function in the Client route config.
 ```
 Tips
 ```javascript
+    templateUrl: './views/client.template.html',
     resolve: {
         client: function () {
             return true; // Expects a promise that determines of the route will succeed.
