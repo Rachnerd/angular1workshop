@@ -32,6 +32,7 @@ Create a new ClientCtrl attached to myApp module in a new file (scripts/controll
 ```
 Tips
 - Copy home controller and configure it.
+
 1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
 Let ClientCtrl handle the /client/:id route and create and assign a client template.
