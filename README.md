@@ -137,4 +137,4 @@ Tips
 ```javascript
 Client.prototype.save = function () {};
 ```
-- [$http](https://docs.angularjs.org/api/ng/service/$http)
+- [$http.put](https://docs.angularjs.org/api/ng/service/$http#put)
