@@ -69,7 +69,7 @@ Tips
 templateUrl: './views/client.template.html',
 resolve: {
     client: function () {
-        return true; // Expects a promise that determines of the route will succeed.
+        return true; // Expects a promise that determines if the route will succeed.
     }
 }
 ```
@@ -106,6 +106,18 @@ resolve: {
 ```javascript
 .controller('ClientCtrl', function (ClientLoader) {
     console.log(ClientLoader.client);
+```
+
+```javascript
+.service('ClientLoader', function (ClientService, Client) {
+    this.client = null;
+    this.load = function (id) {
+        var service = this;
+        return ClientService.getById(id).then(function (response) {
+            service.client = response.data;
+        });
+    }
+})
 ```
 
 Now we need to get rid of the number 1 by retrieving the id of the routing attempt.
