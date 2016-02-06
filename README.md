@@ -88,10 +88,22 @@ If the getById succeeds, the ClientLoader should set its client variable.
 ```
 Tips
 ```javascript
-var services = this;
-function otherScopedFunction (response) {
+var service = this;
+function differentScopeFunction (response) {
     service.client = response.data;
 }
 ```
 
-1.7 -
+##1.7
+If everything is setup correctly, the resolve function can now return a load function and the ClientCtrl can retrieve a already loaded client.
+```javascript
+resolve: {
+    client: function (ClientLoader) {
+        return ClientLoader.load(1);
+    }
+}
+```
+```javascript
+.controller('ClientCtrl', function (ClientLoader) {
+    console.log(ClientLoader.client);
+```
