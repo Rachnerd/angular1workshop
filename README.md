@@ -31,16 +31,22 @@ At the end of this assignment routes/controllers are created and configured.
 Create a new ClientCtrl attached to myApp module in a new file (scripts/controllers/client.controller.js).
 ```
 Tips
-- Copy home controller and configure it.
+- Check home.controller.js.
 
 1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
 Let ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
+Tips
+- Check home.controller.js.
+
 1.3 - If we want to load an individual client for the client page, we need to add a getById function to our ClientService.
 ```
-Add get by id functionality to the ClientService (remote url: '/clients/' + id)
+Add get by id functionality to the ClientService.
 ```
+Tips
+- The fake backend expects a GET request with url: '/clients/id' (id being a number, 1 + 2 are available, 3+ returns an error).
+
 1.4 - To test our get by id functionality, we need to let the ClientCtrl retrieve a param from the route.
 ```
 Retrieve a client based on the id of the url and log it ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
