@@ -141,7 +141,8 @@ Client.prototype.save = function () {};
 
 ##1.9
 To test our Client factory we fist need to make sure that our ClientLoader doesn't set the client as a js object, but
-as an instance of Client.
+as an instance of Client. Client (factory) returns a Client function that can be instantiated.
+This means the Client (factory) dependency can be instantiated directly.
 ```
 Change the way ClientLoader sets its client.
 Let the ClientController change the name of the client and call the save function.
@@ -149,7 +150,6 @@ Since the save function is a promise, add a success handler that logs the respon
 If everything worked you should receive an updated client from the server.
 ```
 Tips
-- Factory returns a Client function that can be instantiated.
 ```javascript
 function (Client) {
     new Client(response.data);
