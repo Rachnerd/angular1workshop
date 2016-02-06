@@ -18,15 +18,16 @@ angular.module('fakeBackend', ['ngMockE2E'])
  *  Simple factory that returns some Classes to simulate backend objects.
  */
 .factory('BackendClasses' , function () {
-    var id = 1;
-    function Client (firstName, lastName) {
+    var id = 1,
+        classes = {};
+    classes.Client = function (firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
         this.contract = null;
         id += 1;
-    }
-    function Contract(start, end, min, sms, data, priceAMonth) {
+    };
+    classes.Contract = function (start, end, min, sms, data, priceAMonth) {
         this.start = start;
         this.end = end;
         this.min = min;
@@ -34,18 +35,14 @@ angular.module('fakeBackend', ['ngMockE2E'])
         this.data = data;
         this.priceAMonth = priceAMonth;
         this.usages = {};
-    }
-    function Usage(min, sms, data) {
+    };
+    classes.Usage = function (min, sms, data) {
         this.min = min;
         this.sms = sms;
         this.data = data;
-    }
+    };
 
-    return {
-        Client: Client,
-        Contract: Contract,
-        Usage: Usage
-    }
+    return classes;
 })
 /**
  *  Service that holds our data (fake database).
