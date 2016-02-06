@@ -35,3 +35,13 @@ At the end of this assignment routes/controllers are created and configured.
 1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
 
 1.5 - Add PUT and DELETE functionality in the ClientService and test if it works.
+
+1.6 - Create a service called ClientLoader that contains a load function and a client variable.
+      The load function has a parameter id and returns ClientService's getById(id). This load service is only interested in
+      the succeeding GET request so it only adds the success handler to ClientService.getById(id) client from the server.
+      Failed requests will still return a failed promise.
+```javascript
+return ClientService.getById(id).then(function (response) {
+    //service.client = response.data;
+});
+```
