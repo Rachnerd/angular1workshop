@@ -34,14 +34,16 @@ Create a new ClientCtrl attached to myApp module in a new file (scripts/controll
 Tips
 - Check home.controller.js.
 
-1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
+###1.2
+To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
 Let ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
 Tips
 - Check home.controller.js.
 
-1.3 - If we want to load an individual client for the client page, we need to add a getById function to our ClientService.
+###1.3
+If we want to load an individual client for the client page, we need to add a getById function to our ClientService.
 ```
 Add get by id functionality to the ClientService.
 ```
