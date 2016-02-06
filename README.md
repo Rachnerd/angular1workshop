@@ -66,25 +66,32 @@ Create a resolve function in the Client route config.
 ```
 Tips
 ```javascript
-    templateUrl: './views/client.template.html',
-    resolve: {
-        client: function () {
-            return true; // Expects a promise that determines of the route will succeed.
-        }
+templateUrl: './views/client.template.html',
+resolve: {
+    client: function () {
+        return true; // Expects a promise that determines of the route will succeed.
     }
+}
 ```
 
 ##1.6
-Create a service called ClientLoader that contains a load function and a client variable.
-The load function has a parameter id and returns ClientService's getById(id). This load service is only interested in
-the succeeding GET request so it only adds the success handler to ClientService.getById(id) client from the server.
-This success handler should set the client variable of the ClientLoader.
-Failed requests will still return a failed promise.
+The goal of this client resolve is to load the client before the page loads. To prevent the controller from sending
+the same request for retrieving the client, we need to make a ClientLoader service that does this once. The ClientLoader
+can then be shared between the resolve function and the ClientCtrl where the resolve function does the loading and the
+controller simply retrieves the set client.
 
-```javascript
-var service = this;
-return ClientService.getById(id).then(function (response) {
-    service.client = response.data;
-});
 ```
+Create a ClientLoader service that has a load function and a client variable bound to itself.
+The load function has to return the ClientService's getById(id) promise and add a success handler to it.
+The fail handler shouldn't be set because we want to send that through to the caller of the load function (resolve in this case).
+If the getById succeeds, the ClientLoader should set its client variable.
+```
+Tips
+```javascript
+var services = this;
+function otherScopedFunction (response) {
+    service.client = response.data;
+}
+```
+
 1.7 -
