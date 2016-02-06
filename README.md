@@ -23,7 +23,7 @@ Start a web server and open the index.html in localhost.
 Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
 
 ## Assignment 1
-The focus of the first assignment is routing and the use of controllers/services.
+The focus of the first assignment is routing and the use of controllers/services/factories.
 At the end of this assignment routes/controllers are created and configured.
 
 1.1 - Before we can add another page we have to create a new controller.
@@ -32,10 +32,12 @@ Create a new ClientCtrl attached to myApp module in a new file (scripts/controll
 ```
 1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
 ```
-Make ClientCtrl handle the /client/:id route and create and assign a client template.
+Let ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
-1.3 - Add get by id functionality to the ClientService (remote url: '/clients/' + id)
-
+1.3 - If we want to load an individual client for the client page, we need to add a getByid function to our ClientService.
+```
+Add get by id functionality to the ClientService (remote url: '/clients/' + id)
+```
 1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
 
 1.5 - Add PUT and DELETE functionality in the ClientService and test if it works.
