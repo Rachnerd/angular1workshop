@@ -35,7 +35,7 @@ Tips
 - Check home.controller.js.
 
 ###1.2
-To assign the controller to a page we need to create a new route config (like in HomeCtrl) and a template.
+To assign the controller to a page we need to create a new route config and a template.
 ```
 Let ClientCtrl handle the /client/:id route and create and assign a client template.
 ```
@@ -113,7 +113,7 @@ Now we need to get rid of the number 1 by retrieving the id of the routing attem
 Make the resolve dynamic.
 ```
 Tips
-- $routeParams can only check the current url's params. Since the routing isn completed yet, $route is the dependency needed to get the id.
+- $routeParams can only check the current url's params. Since the routing isn't completed yet, $route is the dependency needed to get the id.
 ```javascript
 $route.current.params
 ```
@@ -121,15 +121,20 @@ $route.current.params
 ##1.8
 To illustrate the difference between a factory and service, we're going to create a Client factory. The purpose of this factory is casting
 a plain JS object to an instance of Client.
-```
-Create a Client factory that holds a local function named Client that expects a plain js client (retrieved from the server).
-```
-Tips
 ```javascript
-.factory('Client', function (ClientService) {
+.factory('Client', function () {
     function Client(client) {
         angular.extend(this, client);
     }
     return Client;
 })
 ```
+This factory returns a Client function that binds the retrieved client properties to itself.
+```
+Create a save function for the Client function that will send a put request to '/clients/id' with itself as parameter.
+```
+Tips
+```javascript
+Client.prototype.save = function () {};
+```
+- [$http](https://docs.angularjs.org/api/ng/service/$http)
