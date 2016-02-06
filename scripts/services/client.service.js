@@ -27,8 +27,8 @@ angular.module('vClient', [])
     /*
      *  Assignment 1.5
      */
-    this.put = function (id, params) {
-        return $http.put(base + '/' + id, params);
+    this.put = function (client) {
+        return $http.put(base + '/' + client.id, client);
     };
 
     this.delete = function (id) {
