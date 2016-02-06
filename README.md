@@ -138,3 +138,19 @@ Tips
 Client.prototype.save = function () {};
 ```
 - [$http.put](https://docs.angularjs.org/api/ng/service/$http#put)
+##1.9
+To test our Client factory we fist need to make sure that our ClientLoader doesn't set the client as a js object, but
+as an instance of Client.
+```
+Change the way ClientLoader sets its client.
+Let the ClientController change the name of the client and call the save function.
+Since the save function is a promise, add a success handler that logs the response.data.
+If everything worked you should receive an updated client from the server.
+```
+Tips
+- Factory returns a Client function that can be instantiated.
+```
+function (Client) {
+    new Client(response.data);
+}
+```
