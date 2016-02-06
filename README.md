@@ -138,6 +138,7 @@ Tips
 Client.prototype.save = function () {};
 ```
 - [$http.put](https://docs.angularjs.org/api/ng/service/$http#put)
+
 ##1.9
 To test our Client factory we fist need to make sure that our ClientLoader doesn't set the client as a js object, but
 as an instance of Client.
