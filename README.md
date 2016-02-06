@@ -117,3 +117,19 @@ Tips
 ```javascript
 $route.current.params
 ```
+
+##1.8
+To illustrate the difference between a factory and service, we're going to create a Client factory. The purpose of this factory is casting
+a plain JS object to an instance of Client.
+```
+Create a Client factory that holds a local function named Client that expects a plain js client (retrieved from the server).
+```
+Tips
+```javascript
+.factory('Client', function (ClientService) {
+    function Client(client) {
+        angular.extend(this, client);
+    }
+    return Client;
+})
+```
