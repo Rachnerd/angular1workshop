@@ -113,6 +113,7 @@ Now we need to get rid of the number 1 by retrieving the id of the routing attem
 Make the resolve dynamic.
 ```
 Tips
+- $routeParams can only check the current url's params. Since the routing isn completed yet, $route is the dependency needed to get the id.
 ```javascript
 $route.current.params
 ```
