@@ -26,10 +26,14 @@ Open developer tools in your browser (chrome/ff -> f12, safari -> enable develop
 The focus of the first assignment is routing and the use of controllers/services.
 At the end of this assignment routes/controllers are created and configured.
 
-1.1 - Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
-
-1.2 - Make ClientCtrl handle the /client/:id route and create and assign a client template.
-
+1.1 - Before we can add another page we have to create a new controller.
+```
+Create a new ClientCtrl on the myApp module in a new file (scripts/controllers/client.controller.js).
+```
+1.2 - To assign the controller to a page we need to create a new route config (like in HomeCtrl).
+```
+Make ClientCtrl handle the /client/:id route and create and assign a client template.
+```
 1.3 - Add get by id functionality to the ClientService (remote url: '/clients/' + id)
 
 1.4 - Retrieve a client based on the id of the url ([$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)).
@@ -39,9 +43,13 @@ At the end of this assignment routes/controllers are created and configured.
 1.6 - Create a service called ClientLoader that contains a load function and a client variable.
       The load function has a parameter id and returns ClientService's getById(id). This load service is only interested in
       the succeeding GET request so it only adds the success handler to ClientService.getById(id) client from the server.
+      This success handler should set the client variable of the ClientLoader.
       Failed requests will still return a failed promise.
+
 ```javascript
+var service = this;
 return ClientService.getById(id).then(function (response) {
-    //service.client = response.data;
+    service.client = response.data;
 });
 ```
+1.7 -
