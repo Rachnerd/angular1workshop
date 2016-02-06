@@ -150,7 +150,7 @@ If everything worked you should receive an updated client from the server.
 ```
 Tips
 - Factory returns a Client function that can be instantiated.
-```
+```javascript
 function (Client) {
     new Client(response.data);
 }
