@@ -95,7 +95,7 @@ function differentScopeFunction (response) {
 ```
 
 ##1.7
-If everything is setup correctly, the resolve function can now return a load function and the ClientCtrl can retrieve a already loaded client.
+If everything is setup correctly, the resolve function can now return a load function and the ClientCtrl can retrieve an already loaded client.
 ```javascript
 resolve: {
     client: function (ClientLoader) {
@@ -106,4 +106,13 @@ resolve: {
 ```javascript
 .controller('ClientCtrl', function (ClientLoader) {
     console.log(ClientLoader.client);
+```
+
+Now we need to get rid of the number 1 by retrieving the id of the routing attempt.
+```
+Make the resolve dynamic.
+```
+Tips
+```javascript
+$route.current.params
 ```
