@@ -4,6 +4,12 @@ This workshop serves as an introduction to the Angular (v1.4.9) framework. Durin
 a [fake backed module](../master/libs/fake-backend.js).  The fake-backend should not be edited, but it's recommended to take a
 look into it.
 
+## Run
+Start a web server and open the index.html in localhost.
+
+## Debugging
+Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
+
 ## Content
 This branch contains the base code of the workshop. This base consists of one application module [myApp](../master/scripts/app.js), one 
 controller [HomeCtrl](../master/scripts/controllers/home.controller.js) and one service [ClientService](../master/scripts/services/client.service.js) (packaged in a vClient module).
@@ -13,21 +19,20 @@ contains all dependencies needed in our application so far ([angular](../master/
 
 [ClientService](../master/scripts/services/client.service.js) uses the basic [$http](https://docs.angularjs.org/api/ng/service/$http) service and has a get function that retrieves the clients from the fakeBackend.
 
-[HomeCtrl](../master/scripts/controllers/home.controller.js) assigns the url '/' to it's template and controller. The HomeCtrl has the ClientService as dependency and calls
+[HomeCtrl](../master/scripts/controllers/home.controller.js) assigns the url '/' to it's template and controller. The HomeCtrl injects the ClientService and calls
 the get function to log the response.
 
-## Run
-Start a web server and open the index.html in localhost.
-
-## Debugging
-Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
-
 ## Assignment 1
-The focus of the first assignment is routing and the use of [controllers](https://docs.angularjs.org/guide/controller)/[services/factories](https://docs.angularjs.org/guide/services).
+Currently the application only has one route (page). During this assignment we will add another page that retrieves a single client based on the 
+requested id. The goal is to configure the routing of that page to request the client before the route succeeds and the controller gets loaded.
+To prevent the controller from having to request the client again to gain access to it, we need to create a service (singleton) that is sharable between
+the route config and the controller (dependency injection). The route config will ask our service to request the client based on id, then the service will save the response so
+the controller can simply ask for an already loaded client.
+
 The following subjects will be implemented and configured:
--  Routes/controllers
--  Angular's [$http](https://docs.angularjs.org/api/ng/service/$http) GET/PUT [promises](https://docs.angularjs.org/api/ng/service/$q#the-promise-api)
--  Services and factories
+-  [Routes](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)/[controllers](https://docs.angularjs.org/guide/controller)
+-  [$http service](https://docs.angularjs.org/api/ng/service/$http) GET/PUT [promises](https://docs.angularjs.org/api/ng/service/$q#the-promise-api)
+-  [Services/Factories](https://docs.angularjs.org/guide/services)
 
 ###1.1
 Before we can add another page we have to create a new controller.
