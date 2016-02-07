@@ -23,8 +23,11 @@ Start a web server and open the index.html in localhost.
 Open developer tools in your browser (chrome/ff -> f12, safari -> enable developer tools)
 
 ## Assignment 1
-The focus of the first assignment is routing and the use of controllers/services/factories.
-At the end of this assignment routes/controllers are created and configured.
+The focus of the first assignment is routing and the use of [controllers](https://docs.angularjs.org/guide/controller)/[services/factories](https://docs.angularjs.org/guide/services).
+The following subjects will be implemented and configured:
+-  Routes/controllers
+-  Promises
+-  Services and factories
 
 ###1.1
 Before we can add another page we have to create a new controller.
