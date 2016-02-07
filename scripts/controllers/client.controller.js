@@ -23,15 +23,6 @@ angular.module('myApp')
     })
 })
 .controller('ClientCtrl', function ($scope, ClientLoader) {
-    /*
-     *  Assignment 1.4
-     */
-    //ClientService.getById($routeParams.id)
-    //    .then(function (response) {
-    //       // console.log(response.data);
-    //    }, function (response) {
-    //
-    //    });
     console.log(ClientLoader.client);
     /*
      *  Assignment 1.9

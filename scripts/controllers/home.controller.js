@@ -32,18 +32,11 @@ angular.module('myApp')
             console.log(response);
         });
     /*
-     *  Assignment 1.5 test
+     *  Assignment 1.4
      */
     //ClientService.put(1, {firstName: 'Kees'})
     //    .then(function promiseSuccessHandler(response) {
     //        console.log(response.data);
-    //    }, function promiseErrorHandler(response) {
-    //        console.log(response);
-    //    });
-
-    //ClientService.delete(1)
-    //    .then(function promiseSuccessHandler(response) {
-    //        console.log(response.data.message);
     //    }, function promiseErrorHandler(response) {
     //        console.log(response);
     //    });
