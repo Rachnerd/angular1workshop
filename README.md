@@ -24,10 +24,16 @@ the get function to log the response.
 
 ## Assignment 1
 Currently the application only has one route (page). During this assignment we will add another page that retrieves a single client based on the 
-requested id. The goal is to configure the routing of that page to request the client before the route succeeds and the controller gets loaded.
+requested id. 
+
+The goal is to configure the routing of that page to request the client before the route succeeds and the controller gets loaded.
+
 To prevent the controller from having to request the client again to gain access to it, we need to create a service (singleton) that is sharable between
 the route config and the controller (dependency injection). The route config will ask our service to request the client based on id, then the service will save the response so
-the controller can simply ask for an already loaded client.
+the controller can simply ask for an already loaded client. 
+
+To add some functionality to the client object we will make a Client factory that will return
+an instantiable Client function that has some custom functionality in its prototype.
 
 The following subjects will be implemented and configured:
 -  [Routes](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)/[controllers](https://docs.angularjs.org/guide/controller)
