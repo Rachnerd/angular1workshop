@@ -158,7 +158,8 @@ a plain JS object to an instance of Client.
 ```
 This factory returns a Client function that binds the retrieved client properties to itself.
 ```
-Create a save function for the Client function that will send a put request to '/clients/id' with itself as parameter.
+Create a put function in the ClientService that will send a client to '/clients/' + id.
+Create a save function in the Client factory that will call the previously created put function with itself as parameter.
 ```
 Tips
 ```javascript
