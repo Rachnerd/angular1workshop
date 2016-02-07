@@ -23,7 +23,7 @@ angular.module('myApp')
 .controller('HomeCtrl', function ($scope, ClientService) {
     /**
      *  Syntax: promise
-     *              .then(successFn, errorFn);
+     *              .then(successCb, errorCb, notifyCb);
      */
     ClientService.get()
         .then(function promiseSuccessHandler(response) {
