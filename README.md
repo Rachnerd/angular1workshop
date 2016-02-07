@@ -26,7 +26,7 @@ Open developer tools in your browser (chrome/ff -> f12, safari -> enable develop
 The focus of the first assignment is routing and the use of [controllers](https://docs.angularjs.org/guide/controller)/[services/factories](https://docs.angularjs.org/guide/services).
 The following subjects will be implemented and configured:
 -  Routes/controllers
--  Promises
+-  Angular's [$http](https://docs.angularjs.org/api/ng/service/$http) GET/PUT [promises](https://docs.angularjs.org/api/ng/service/$q#the-promise-api)
 -  Services and factories
 
 ###1.1
