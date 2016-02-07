@@ -13,7 +13,7 @@ angular.module('vClient', [])
     var base = '/clients';
     /**
      * Get request that retrieves all clients.
-     * @returns {HttpPromise}
+     * @returncs {HttpPromise}
      */
     this.get = function () {
         return $http.get(base);
