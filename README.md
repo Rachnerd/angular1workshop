@@ -59,9 +59,9 @@ Tips
 - The fake backend expects a GET request url: '/clients/id' (id being a number, 1 + 2 are available, 3+ returns an error).
 
 ###1.4
-To test our get by id functionality, we need to let the ClientCtrl retrieve a param from the route.
+Before we want to setup the condition for loading the page we need to test the getById function.
 ```
-Retrieve a client based on the id of the url and log it.
+Retrieve a client based on the id of the url and log it (ClientCtrl).
 ```
 Tips
 - [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)
@@ -95,11 +95,12 @@ The fail handler shouldn't be set because we want to send that through to the ca
 If the getById succeeds, the ClientLoader should set its client variable.
 ```
 Tips
+- Setting a service variable in an anonymous function
 ```javascript
 var service = this;
-function differentScopeFunction (response) {
+(function differentScopeFunction (response) {
     service.client = response.data;
-}
+})
 ```
 
 ##1.7
