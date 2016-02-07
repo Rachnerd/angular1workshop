@@ -23,7 +23,7 @@ angular.module('myApp')
 .controller('HomeCtrl', function ($scope, ClientService) {
     /**
      *  Syntax: promise
-     *              .then(successFn, errorFn);
+     *              .then(successCb, errorCb, notifyCb);
      */
     ClientService.get()
         .then(function promiseSuccessHandler(response) {
@@ -48,5 +48,5 @@ angular.module('myApp')
     //        console.log(response);
     //    });
 
-    $scope.welcomeText = 'Welkom bij de Angular 1 workshop.';
+    $scope.welcomeText = 'Open developer tools -> console';
 });
