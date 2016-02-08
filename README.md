@@ -46,8 +46,7 @@ When in edit mode, create a save button that will call the previously made save 
 Log the backend response to see if the client is updated.
 ```
 
-2.6 - To prevent every controller from having to inject $location and handle redirects, we're going to make a directive that
-injects a redirect function called "to" in our html tag.
+2.6 - To prevent every controller from having to inject $location and handle redirects.
 ```
 Create a directive called "redirect" (scripts/directives/redirect.directive.js) and configure it so it works like an attribute (restrict A).
 ```
@@ -63,10 +62,22 @@ Tips
 });
 ```
 
-2.7 - In the directive's controller function, give the scope a "to" function with url param (use $location like in HomeCtrl).
+2.7 - The redirect directive currently does nothing.
+```
+In the directive's controller function, give the scope a "to" function with url param (use $location like in HomeCtrl).
+```
 
-2.8 - Now in stead of letting the HomeCtrl change the route on click of a client, let the directive redirect do it.
- Client element will still have a click listener, but the redirect attribute in the html element will let the directive inject the "to" function for you (and not the HomeCtrl). So ng-click="to(url)".
+2.8 - We have to replace our previously created redirect function with our new directive. 
+```
+Now in stead of letting the HomeCtrl change the route on click of a client, let the directive redirect do it.
+Client element will still have a click listener, but the redirect attribute in the html element will let the directive inject the "to" function for you (and not the HomeCtrl).
+```
+Tips
+```html
+<div redirect>
+    <div ng-click="to('url')">Client1</div>
+</div>
+```
 
 2.9 - Create a directive scripts/directives/header.directive.js Configure the directive so it becomes an Element (restrict: 'E'), isolate the scope and create a partial (template) for it.
 
