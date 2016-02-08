@@ -1,16 +1,21 @@
 # Angular 1 workshop
 ### by Quintor
 
+##Content
+This branch contains the solutions of Assignment one.
+
 ## Assignment 2
-The focus of this assignment is data binding and directives.
+Now that our routes are setup and the correct data is retrieved, we need to visualize our data.
+The following assignment will let you use the $scope object en some standard Angular 
+directives. At the end we make 2 different kind of directives.
 
 2.1 - Create a list in the Home template that renders the clients using [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat).
 
-2.2 - Add click event to each client and make the click redirect to the client/:id page with the appropriate id [$location](https://docs.angularjs.org/api/ng/service/$location).
+2.2 - Add [click event](https://docs.angularjs.org/api/ng/directive/ngClick) to each client and make the click redirect to the client/:id page with the appropriate id [$location](https://docs.angularjs.org/api/ng/service/$location).
 
 2.3 - In the client template visualize all client properties including contract and usage.
 
-2.4 - Create an edit button that allows the user to edit the first and last name of a person. [Two-way binding](https://docs.angularjs.org/api/ng/directive/ngModel)
+2.4 - Create an edit button that allows the user to edit the first and last name of a person. [ng-if](https://docs.angularjs.org/api/ng/directive/ngIf) [Two-way binding](https://docs.angularjs.org/api/ng/directive/ngModel) 
 
 2.5 - When in edit mode, create a save button that will call the previously made save function of the Client instance.
 
