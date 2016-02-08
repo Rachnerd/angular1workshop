@@ -42,4 +42,21 @@ angular.module('myApp')
     //    });
 
     $scope.welcomeText = 'Open developer tools -> console';
-});
+})
+    .directive('name', function () {
+        return {
+            //config
+            restrict: 'E',
+            templateUrl: './views/name.html',
+            link: function($scope, element, attrs) {
+                /*
+                    DOM manipulatie.
+                    element -> HTML element gekoppeld
+                               aan deze directive
+                    attrs   -> Overige attributen op het
+                               HTML element.
+                 */
+            },
+            controller: function ($scope) {}
+        }
+    });

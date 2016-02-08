@@ -12,7 +12,7 @@ The focus of this assignment is data binding and directives.
 
 2.4 - Create an edit button that allows the user to edit the first and last name of a person. [Two-way binding](https://docs.angularjs.org/api/ng/directive/ngModel)
 
-2.5 - When in edit mode, create a save button that will send the PUT request to the server through the ClientService (make sure the page is up-to-date with the change).
+2.5 - When in edit mode, create a save button that will call the previously made save function of the Client instance.
 
 2.6 - Create a directive called "redirect" (scripts/directives/redirect.directive.js) and configure it so it works like an attribute (restrict A).
 

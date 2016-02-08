@@ -63,4 +63,12 @@ angular.module('myApp')
         return ClientService.put(this);
     };
     return Client;
+})
+.factory('ClientFactory', function ($http) {
+    var base = '/clients';
+    return {
+        get: function () {
+            return $http.get(base);
+        }
+    }
 });
