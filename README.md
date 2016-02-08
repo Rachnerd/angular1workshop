@@ -79,8 +79,16 @@ Tips
 </div>
 ```
 
-2.9 - Create a directive scripts/directives/header.directive.js Configure the directive so it becomes an Element (restrict: 'E'), isolate the scope and create a partial (template) for it.
+2.9 - Next we want to create a header with functionality that can be used on every page. To prevent duplicated HTML we are going to create a directive.
+```
+Create a directive scripts/directives/header.directive.js Configure the directive so it becomes an Element (restrict: 'E'), isolate the scope and create a partial (template) for it.
+```
+Tips
+- Scope isolation: scope: {}
 
 2.10 - Inside the header partial create a button that redirects on click back to the home page (with help of the redirect directive).
 
-2.11 - Add a <header></header> tag in the home and client template (if button doesn't show something went wrong).
+2.11 - To see if the button works we have to add the header to our pages.
+```
+Add a <header></header> tag in the home and client template (if button doesn't show something went wrong).
+```
