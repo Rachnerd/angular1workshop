@@ -4,8 +4,8 @@ This workshop serves as an introduction to the Angular (v1.4.9) framework. Durin
 a [fake backed module](../master/libs/fake-backend.js).  The fake-backend should not be edited, but it's recommended to take a
 look at it. Available url's:
 ```
-GET     /clients        | Returns all clients without specifik information
-GET     /clients/:id    | Returns one single client including specifik information.
+GET     /clients        | Returns all clients without additional information
+GET     /clients/:id    | Returns one single client including additional information.
 POST    /clients        | Creates a new client.
 PUT     /clients/:id    | Updates existing client.
 DELETE  /clients/:id    | Deletes existing client.
