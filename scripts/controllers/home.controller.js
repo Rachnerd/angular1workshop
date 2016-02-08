@@ -40,6 +40,5 @@ angular.module('myApp')
     //    }, function promiseErrorHandler(response) {
     //        console.log(response);
     //    });
-
     $scope.welcomeText = 'Open developer tools -> console';
 });
