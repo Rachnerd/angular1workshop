@@ -19,13 +19,13 @@ angular.module('vClient', [])
         return $http.get(base);
     };
     /*
-     *  Assignment 1.3
+     *  1.3
      */
     this.getById = function (id) {
         return $http.get(base + '/' + id);
     };
     /*
-     *  Assignment 1.5
+     *  1.8
      */
     this.put = function (client) {
         return $http.put(base + '/' + client.id, client);
