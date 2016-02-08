@@ -86,7 +86,10 @@ Create a directive scripts/directives/header.directive.js Configure the directiv
 Tips
 - Scope isolation: scope: {}
 
-2.10 - Inside the header partial create a button that redirects on click back to the home page (with help of the redirect directive).
+2.10 - 
+```
+Inside the header partial create a button that redirects on click back to the home page (with help of the redirect directive).
+```
 
 2.11 - To see if the button works we have to add the header to our pages.
 ```
