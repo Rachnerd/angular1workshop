@@ -1,3 +1,12 @@
-<h1>Client {{client.firstName + ' ' + client.lastName}}</h1>
+<!--2.6-->
+<v-header title="Client"></v-header>
+<h1 ng-click="editMode = !editMode" make-red>{{client.firstName + ' ' + client.lastName}} <- clickable!</h1>
+
+<form ng-if="editMode" ng-submit="edit()">
+    <input ng-model="client.firstName">
+    <input ng-model="client.lastName">
+    <button>Save</button>
+</form>
+<!--2.1-->
 <p>Start {{ client.contract.start | date:'dd/MM/yyyy'}}</p>
 <p>End {{ client.contract.end | date:'dd/MM/yyyy'}}</p>

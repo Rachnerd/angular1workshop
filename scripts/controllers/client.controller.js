@@ -25,4 +25,14 @@ angular.module('myApp')
         .catch(function () {
             $location.path('/');
         });
+    $scope.editMode = false;
+    $scope.edit = function () {
+        if($scope.editMode) {
+            ClientService.put($scope.client)
+                .then(function (response) {
+                    console.log('Updated client from server: ', response.data);
+                });
+        }
+        $scope.editMode = !$scope.editMode;
+    }
 });
