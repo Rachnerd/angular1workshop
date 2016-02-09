@@ -26,7 +26,7 @@ Tips
 To be able to edit a client's properties, we have to toggle between normal visualization and properties in a form.
 ```
 Make it possible to toggle between normal mode and edit mode.
-While in edit mode, let the first and last name be in the form of inputfields.
+While in edit mode, show a form with 2 inputfields that are bound to the first and last name.
 ```
 
 Tips
@@ -36,7 +36,7 @@ Tips
 ###2.3
 We want to be able to edit the remote client as well. For this we need a put method.
 ```
-Create a put method in ClientService
+Create a put method in ClientService.
 ```
 Tips
 - [$http.put]()
@@ -44,10 +44,11 @@ Tips
 ###2.4
 Now, while in edit mode we want to save the adjusted fields.
 ```
-When in edit mode, create a save button that will call the previously made save function of the ClientService.
-Log the backend response to see if the client is updated (this time we don't have to set the client in the $scope because 
-of the two-way bind).
+Use the editmode form's ng-submit directive call the save of the ClientService.
+Log the response of the server to see if you receive an updated client.
 ```
+Tips
+- [ng-submit]()
 
 ###Part 2
 In this part we're going to make some custom directives.
@@ -98,9 +99,9 @@ scope: {
 - Function bind & (only allows the directive to call this function on the parent)
 
 ###2.8
-Let's say we want to make an attribute directive that adds a class to a tag.
+Let's say we want to make an attribute directive that makes the color of the target element red.
 ```
-Create a new directive called addClass and configure it so it works like an attribute.
+Create a new directive called makeRed and configure it so it works like an attribute.
 ```
 
 Tips
@@ -114,12 +115,13 @@ Tips
 });
 ```
 ```html
-<div add-class></div>
+<div make-red></div>
 ```
 ##2.9
-The goal of most A directives is DOM manipulation. In this simple directive we will add a class to the target tag.
+The goal of most A directives is DOM manipulation.
 ```
-Implement the link function and use the element parameter to add a class (do something with this class in app.css).
+Implement the link function and use the element parameter to make its text red.
+Play around with manipulating the element (css).
 ```
 
 Tips
@@ -129,3 +131,12 @@ link: function ($scope, element, attrs) {
 }
 ```
 - To see what is possible with the parameters, log them.
+
+##2.10
+Next we want to create a custom filter that formats interpolated strings.
+```
+Create a .filter and give it a name.
+```
+```javascript
+
+```
