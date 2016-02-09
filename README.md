@@ -16,6 +16,7 @@ Client controller receives the correct client, but its properties aren't visuali
 ```
 Add client to the scope and visualize its properties in the template (including contract).
 Use a filter for displaying the correct date format for the contract start and end (Only client 1 has a contract).
+day/month/year -> 01/01/2016
 ```
 
 Tips
