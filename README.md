@@ -15,7 +15,11 @@ custom directives.
 Client controller receives the correct client, but its properties aren't visualized yet.
 ```
 Add client to the scope and visualize its properties in the template (including contract).
+Use a filter for displaying the correct date format for the contract start and end (Only client 1 has a contract).
 ```
+
+Tips
+- [date filter] (https://docs.angularjs.org/api/ng/filter/date)
 
 ###2.2 
 To be able to edit a client's properties, we have to toggle between normal visualization and properties in a form.
