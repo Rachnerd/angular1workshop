@@ -64,6 +64,9 @@ Tips
     }
 });
 ```
+```html
+<v-header></v-header>
+```
 
 ###2.6 
 Now we can add an <v-header></v-header> element everywhere we want.
@@ -75,7 +78,8 @@ Add the v-header tag to the client template at the top.
 We want our header to have a dynamic title and some redirect click events.
 ```
 Let the scope expect a title attribute that binds literal.
-Render the title in the header template.
+Render the title in the header template and set the title attribuut in the client template.
+Do the same for the home page.
 ```
 
 Tips
@@ -86,4 +90,37 @@ scope: {
 ```
 - Literal @
 - Two way bind =
-- Function bind & (only allows the directive to call this function on the parent).
+- Function bind & (only allows the directive to call this function on the parent)
+
+###2.8
+Let's say we want to make an attribute directive that adds a class to a tag.
+```
+Create a new directive called addClass and configure it so it works like an attribute.
+```
+
+Tips
+```javascript
+.directive('addClass', function () {
+    return {
+        restrict: 'A',
+        scope: {}
+        //Attribute directives never have a template.
+    }
+});
+```
+```html
+<div add-class></div>
+```
+##2.9
+The goal of most A directives is DOM manipulation. In this simple directive we will add a class to the target tag.
+```
+Implement the link function and use the element parameter to add a class (do something with this class in app.css).
+```
+
+Tips
+```javascript
+link: function ($scope, element, attrs) {
+	
+}
+```
+- To see what is possible with the parameters, log them.
