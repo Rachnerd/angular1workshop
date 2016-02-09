@@ -1,13 +1,14 @@
 <h1>{{welcomeText}}</h1>
-<!-- 1.7 -->
+<!--1.7-->
 <form name="clientForm">
     <input ng-model="newClient.firstName" required>
     <input ng-model="newClient.lastName" required>
     <button ng-click="create(newClient)" ng-disabled="!clientForm.$valid">Create</button>
 </form>
-<ul>
-    <li ng-repeat="client in clients">
-        <p ng-click="select(client)">{{client.firstName[0] + '. ' + client.lastName}}</p>
+<!--1.6-->
+<ul id="client-list">
+    <li class="client" ng-repeat="client in clients" ng-click="select(client)">
+        <p>{{client.firstName[0] + '. ' + client.lastName}}</p>
         <div ng-if="selected == client" >
             <button ng-click="delete(client)">Delete</button>
             <button ng-click="show(client)">Details</button>

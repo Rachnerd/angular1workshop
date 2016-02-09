@@ -4,3 +4,25 @@ body {
 h1 {
     font-size: 3em;
 }
+form {
+    width: 10em;
+    margin: 0 auto;
+}
+#client-list {
+    background-color: #EEE;
+    padding: 1em;
+}
+#client-list .client {
+    background-color: #DDD;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1em;
+}
+
+#client-list .client button {
+    float: right;
+    font-size: 1em;
+    position: relative;
+    top: -1em;
+}
