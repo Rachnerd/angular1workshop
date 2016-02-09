@@ -89,7 +89,7 @@ The following subjects will be implemented and configured:
 
 
 ###1.6
-First we're going to visualize a list of clients on the Home page.
+First we're going to visualize a list of clients in the Home page.
 ```
 Assign the remote clients to the $scope and render them in the home template with help of ng-repeat.
 Give the list an id called: client-list.
@@ -108,10 +108,14 @@ Tips
 To add a client we're going to create a form.
 ```
 Create a form with 2 inputs for firstName and lastName and a create button (preferably above the client-list).
+Give the form a name and disable the button if the inputs are empty.
 ```
 
 Tips
 - Each input will have to bind its variables to the scope using [ng-model]().
+- [form](https://docs.angularjs.org/api/ng/directive/form#example)
+- [ng-disabled](https://docs.angularjs.org/api/ng/directive/ngDisabled)
+- Combine ng-disabled with the form validation.
 
 ###1.8
 Before we can add a person, we have to create a post function in the ClientService.
