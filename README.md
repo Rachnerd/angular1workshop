@@ -5,6 +5,11 @@
 This branch contains the solutions of Assignment 2.
 
 ##Extra assignments
+- Apply a filter to a ng-repeat.
+```
+Create an inputfield and link it to the results of the ng-repeat.
+(search functionality)
+```
 - In stead of using $http, take a look at $resource.
 ```javascript
 .factory('ClientResource', function ($resource) {
