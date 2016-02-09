@@ -69,7 +69,7 @@ To test our getById function we need to retrieve the :id parameter from our clie
 Retrieve a client based on the id of the url and log it (ClientCtrl).
 ```
 Tips
-- Inject [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams) and log it.
+- Inject [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams) (into ClientCtrl) and log it.
 
 ###1.5
 If we get to the client route with a non existing id, we want to redirect back to the home page.
@@ -102,15 +102,16 @@ Tips
     <li class="client" ng-repeat"..."></li>
 </ul>
 ```
-
-Tips
-- [ng-repeat]()
+-[ng-repeat]()
 
 ###1.7
 To add a client we're going to create a form.
 ```
 Create a form with 2 inputs for firstName and lastName and a create button (preferably above the client-list).
 ```
+
+Tips
+- Each input will have to bind its variables to the scope using [ng-model]().
 
 ###1.8
 Before we can add a person, we have to create a post function in the ClientService.
@@ -132,12 +133,14 @@ Make deletion of a client in the HomeCtrl possible (remote AND $scope).
 
 Tips
 - In stead of showing a delete button at every client, try to make it only visible for a selected client with help of
-[ng-show]() or [ng-if]().
+[ng-show]() or [ng-if](). To realize this you have to create another value on the $scope that keeps track of the selected client.
+- [$http.delete]()
 
 ###1.10
 Now that we can add and delete people we want to be able to edit them in our client page.
 ```
-Add a click event to every client (a button or clickable name) that redirects the page to the client route with correct id.
+Add another button to every client named details. When details is clicked the application should redirect to the /client route
+with the correct id (/client/id)
 ```
 
 Tips
