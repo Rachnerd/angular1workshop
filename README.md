@@ -135,10 +135,25 @@ link: function ($scope, element, attrs) {
 ##2.10
 Next we want to create a custom filter that formats interpolated strings.
 ```
-Create a .filter and give it a name.
+Create a .filter and make it change a string.
+Use the filter somewhere in the application to see if it works.
 ```
 ```javascript
-
+//Example:
+.filter('reverse', function() {
+  return function(input, uppercase) {
+    input = input || '';
+    var out = "";
+    for (var i = 0; i < input.length; i++) {
+      out = input.charAt(i) + out;
+    }
+    // conditional based on optional argument
+    if (uppercase) {
+      out = out.toUpperCase();
+    }
+    return out;
+  };
+})
 ```
 ##End of Assignment 2
 Assignment 3 can be found in this [branch](https://github.com/Rachnerd/angular1workshop/tree/assignment_3) (branch also includes all answers of this assignment).
