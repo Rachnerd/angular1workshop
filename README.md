@@ -70,12 +70,19 @@ Retrieve a client based on the id of the url and log it (ClientCtrl).
 Tips
 - Inject [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams) and log it.
 
+###1.5
+If we get to the client route with a non existing id, we want to redirect back to the home page.
+```
+Catch the getById promise and let the controller redirect back to the home page.
+```
+Tips
+- [$location]()
+
 ## Assignment 2
 Now that we setup the routes and retrieved the correct client for our client page, we want to visualize our data.
 
 The following subjects will be implemented and configured:
 - [Angular directives]()
-- [$location]()
 - [post]()
 - [delete]()
 

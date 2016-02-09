@@ -24,12 +24,17 @@ angular.module('myApp')
     /**
      *  Syntax: promise
      *              .then(successCb, errorCb, notifyCb);
+     *         or
+     *          promise
+     *              .then(successCb)
+     *              .catch(errorCb)
      */
     ClientService.get()
-        .then(function promiseSuccessHandler(response) {
-            console.log(response.data); // f12 developer tools console.
-        }, function promiseErrorHandler(response) {
-            console.log(response);
+        .then(function (response) {
+            console.log('HomeCtrl response data', response.data); // f12 developer tools console.
+        })
+        .catch(function () {
+            console.log('Something went wrong');
         });
 
     $scope.welcomeText = 'Open developer tools -> console';
