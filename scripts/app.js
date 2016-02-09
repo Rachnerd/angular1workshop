@@ -26,3 +26,4 @@ angular.module('myApp', ['fakeBackend', 'ngRoute', 'vClient'])
         redirectTo: '/'
     });
 });
+

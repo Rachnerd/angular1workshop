@@ -79,8 +79,7 @@ angular.module('fakeBackend', ['ngMockE2E'])
  *  BackendClasses  -   Factory that holds the backend classes. Used here for data creation purposes.
  */
 .run(function($httpBackend, BackendData, BackendClasses) {
-    var Client = BackendClasses.Client,
-        Contract = BackendClasses.Contract;
+    var Client = BackendClasses.Client;
 
     /**
      *  GET request to retrieve all clients (contracts not included).

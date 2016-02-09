@@ -80,9 +80,4 @@ angular.module('myApp')
     $scope.show = function (client) {
         $location.path('client/' + client.id);
     };
-}).directive('header', function () {
-    return {
-        restrict: 'E',
-        scope: {}
-    }
 });
