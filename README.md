@@ -44,8 +44,8 @@ $routeProvider.when('/client/:id', {
     templateUrl: './views/client.template.html',
     controllerAs: 'client'
 })
-//$scope.client becomes
-this.client
-//{{client}} becomes
-{{client.client}}
+//$scope.something becomes
+this.something
+//{{something}} becomes
+{{client.something}}
 ```
