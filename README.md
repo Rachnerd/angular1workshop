@@ -84,8 +84,8 @@ Now that we setup the routes and retrieved the correct client for our client pag
 
 The following subjects will be implemented and configured:
 - [Angular directives](https://docs.angularjs.org/guide/directive)
-- [$http.post]()
-- [$http.delete]()
+- [$http.post](https://docs.angularjs.org/api/ng/service/$http#post)
+- [$http.delete](https://docs.angularjs.org/api/ng/service/$http#delete)
 
 
 ###1.6
@@ -102,7 +102,7 @@ Tips
     <li class="client" ng-repeat"..."></li>
 </ul>
 ```
--[ng-repeat]()
+- [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat)
 
 ###1.7
 To add a client we're going to create a form.
@@ -126,7 +126,7 @@ gets added to the client list (in the $scope).
 ```
 
 Tips
-- [$http.post]()
+- [$http.post](https://docs.angularjs.org/api/ng/service/$http#post)
 
 ###1.9
 Besides adding people to our list, we also want to be able to delete them.
@@ -138,7 +138,7 @@ Make deletion of a client in the HomeCtrl possible (remote AND $scope).
 Tips
 - In stead of showing a delete button at every client, try to make it only visible for a selected client with help of
 [ng-show]() or [ng-if](). To realize this you have to create another value on the $scope that keeps track of the selected client.
-- [$http.delete]()
+- [$http.delete](https://docs.angularjs.org/api/ng/service/$http#delete)
 
 ###1.10
 Now that we can add and delete people we want to be able to edit them in our client page.
@@ -148,7 +148,7 @@ with the correct id (/client/id)
 ```
 
 Tips
-- [$location]()
+- [$location](https://docs.angularjs.org/guide/$location#getter-and-setter-methods)
 
 ##End of Assignment 1
 Assignment 2 can be found in this [branch](https://github.com/Rachnerd/angular1workshop/tree/assignment_2) (branch also includes all answers of this assignment).
