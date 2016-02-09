@@ -92,6 +92,15 @@ The following subjects will be implemented and configured:
 First we're going to visualize a list of clients on the Home page.
 ```
 Assign the remote clients to the $scope and render them in the home template with help of ng-repeat.
+Give the list an id called: client-list.
+Give each client a class name: client.
+```
+
+Tips
+```html
+<ul id="client-list">
+    <li class="client" ng-repeat"..."></li>
+</ul>
 ```
 
 Tips
@@ -100,7 +109,7 @@ Tips
 ###1.7
 To add a client we're going to create a form.
 ```
-Create a form with 2 inputs for firstName and lastName.
+Create a form with 2 inputs for firstName and lastName and a create button (preferably above the client-list).
 ```
 
 ###1.8
