@@ -33,15 +33,6 @@ the get function to log the response.
 Currently the application only has one route (page). During this assignment we will add another page that retrieves a single client based on the 
 requested id. 
 
-The goal is to configure the routing of that page to request the client before the route succeeds and the controller gets loaded.
-
-To prevent the controller from having to request the client again to gain access to it, we need to create a service (singleton) that is sharable between
-the route config and the controller (dependency injection). The route config will ask our service to request the client based on id, then the service will save the response so
-the controller can simply ask for an already loaded client. 
-
-To add some functionality to the client object we will make a Client factory that will return
-an instantiable Client function that has some custom functionality in its prototype.
-
 The following subjects will be implemented and configured:
 -  [Routes](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)/[controllers](https://docs.angularjs.org/guide/controller)
 -  [$http service](https://docs.angularjs.org/api/ng/service/$http) GET/PUT [promises](https://docs.angularjs.org/api/ng/service/$q#the-promise-api)
@@ -69,124 +60,68 @@ If we want to load an individual client for the client page, we need to add a ge
 Add get by id functionality to the ClientService.
 ```
 Tips
-- The fake backend expects a GET request url: '/clients/id' (id being a number, 1 + 2 are available, 3+ returns an error).
+- The fake backend expects a GET request url: '/clients/id' (id being a number, 1 + 2 are available, 3 + returns an error).
 
 ###1.4
-Before we want to setup the condition for loading the page we need to test the getById function.
+To test our getById function we need to retrieve the :id parameter from our client route.
 ```
 Retrieve a client based on the id of the url and log it (ClientCtrl).
 ```
 Tips
-- [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams)
+- Inject [$routeParams](https://docs.angularjs.org/api/ngRoute/service/$routeParams) and log it.
 
-##1.5
-Currently the '/client/:id' route gets loaded regardless of the availability of the remote client. To prevent the page (controller) from
-being called, we can set a condition in our routing config for loading the route using resolve.
+## Assignment 2
+Now that we setup the routes and retrieved the correct client for our client page, we want to visualize our data.
+
+The following subjects will be implemented and configured:
+- [Angular directives]()
+- [$location]()
+- [post]()
+- [delete]()
+
+
+###2.1
+First we're going to visualize a list of clients on the Home page.
 ```
-Create a resolve function in the Client route config.
+Assign the remote clients to the $scope and render them in the home template with help of ng-repeat.
 ```
+
 Tips
-```javascript
-templateUrl: './views/client.template.html',
-resolve: {
-    client: function () {
-        return true; // Expects a promise that determines if the route will succeed.
-    }
-}
+- [ng-repeat]()
+
+###2.2
+To add a client we're going to create a form.
+```
+Create a form with 2 inputs for firstName and lastName.
 ```
 
-##1.6
-The goal of this client resolve is to load the client before the page loads. To prevent the controller from sending
-the same request for retrieving the client, we need to make a ClientLoader service that does this once. The ClientLoader
-can then be shared between the resolve function and the ClientCtrl where the resolve function does the loading and the
-controller simply retrieves the set client.
+###2.3
+Before we can add a person, we have to create a post function in the ClientService.
+```
+Add post functionality to the ClientService and let the home controller pass it to the $scope as a create function.
+Assign the $scope create function to the form submit button. Make sure that if the create is executed the response data (client)
+gets added to the client list (in the $scope).
+```
 
-```
-Create a ClientLoader service that has a load function and a client variable bound to itself.
-The load function has to return the ClientService's getById(id) promise and add a success handler to it.
-The fail handler shouldn't be set because we want to send that through to the caller of the load function (resolve in this case).
-If the getById succeeds, the ClientLoader should set its client variable.
-```
 Tips
-- Setting a service variable in an anonymous function
-```javascript
-var service = this;
-(function differentScopeFunction (response) {
-    service.client = response.data;
-})
+- [$http.post]()
+
+###2.4
+Besides adding people to our list, we also want to be able to delete them.
+```
+Create a delete request in the ClientService. 
+Make deletion of a client in the HomeCtrl possible (remote AND $scope). 
 ```
 
-##1.7
-If everything is setup correctly, the resolve function can now return a load function and the ClientCtrl can retrieve an already loaded client.
-```javascript
-resolve: {
-    client: function (ClientLoader) {
-        return ClientLoader.load(1);
-    }
-}
-```
-```javascript
-.controller('ClientCtrl', function (ClientLoader) {
-    console.log(ClientLoader.client);
-```
-
-```javascript
-.service('ClientLoader', function (ClientService, Client) {
-    this.client = null;
-    this.load = function (id) {
-        var service = this;
-        return ClientService.getById(id).then(function (response) {
-            service.client = response.data;
-        });
-    }
-})
-```
-
-Now we need to get rid of the number 1 by retrieving the id of the routing attempt.
-```
-Make the resolve dynamic.
-```
 Tips
-- $routeParams can only check the current url's params. Since the routing isn't completed yet, $route is the dependency needed to get the id.
-```javascript
-$route.current.params
+- In stead of showing a delete button at every client, try to make it only visible for a selected client with help of
+[ng-show]() or [ng-if]().
+
+###2.5 
+Now that we can add and delete people we want to be able to edit them in our client page.
+```
+Add a click event to every client (a button or clickable name) that redirects the page to the client route with correct id.
 ```
 
-##1.8
-To illustrate the difference between a factory and service, we're going to create a Client factory. The purpose of this factory is casting
-a plain JS object to an instance of Client.
-```javascript
-.factory('Client', function () {
-    function Client(client) {
-        angular.extend(this, client);
-    }
-    return Client;
-})
-```
-This factory returns a Client function that binds the retrieved client properties to itself.
-```
-Create a put function in the ClientService that will send a client to '/clients/' + id.
-Create a save function in the Client factory that will call the previously created put function with itself as parameter.
-```
 Tips
-```javascript
-Client.prototype.save = function () {};
-```
-- [$http.put](https://docs.angularjs.org/api/ng/service/$http#put)
-
-##1.9
-To test our Client factory we fist need to make sure that our ClientLoader doesn't set the client as a js object, but
-as an instance of Client. Client (factory) returns a Client function that can be instantiated.
-This means the Client (factory) dependency can be instantiated directly.
-```
-Change the way ClientLoader sets its client.
-Let the ClientController change the name of the client and call the save function.
-Since the save function is a promise, add a success handler that logs the response.data.
-If everything worked you should receive an updated client from the server.
-```
-Tips
-```javascript
-function (Client) {
-    new Client(response.data);
-}
-```
+- [$location]()
