@@ -39,11 +39,27 @@ Tips
 ###2.4
 Now, while in edit mode we want to save the adjusted fields.
 ```
-When in edit mode, create a save button that will call the previously made save function of the Client instance.
+When in edit mode, create a save button that will call the previously made save function of the ClientService.
 Log the backend response to see if the client is updated (this time we don't have to set the client in the $scope because 
 of the two-way bind).
 ```
 
 ###Part 2
+In this part we're going to make some custom directives.
 ###2.5
+Imagine you want to have a header on every page that can do stuff. You don't want duplicated HTML in your application,
+so you create an Angular Element directive.
+```
+Create a directive called header in scripts/directives/header.js and configure it so it has an isolated scope and
+turns into an Element.
+```
 
+Tips
+```javascript
+.directive('header', function () {
+    return {
+        restrict: 'E',
+        scope: {}
+    }
+});
+```
