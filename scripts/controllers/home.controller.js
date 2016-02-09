@@ -24,21 +24,17 @@ angular.module('myApp')
     /**
      *  Syntax: promise
      *              .then(successCb, errorCb, notifyCb);
+     *         or
+     *          promise
+     *              .then(successCb)
+     *              .catch(errorCb)
      */
     ClientService.get()
-        .then(function promiseSuccessHandler(response) {
+        .then(function (response) {
             console.log(response.data); // f12 developer tools console.
-        }, function promiseErrorHandler(response) {
-            console.log(response);
+        })
+        .catch(function () {
+            console.log('Something went wrong');
         });
-    /*
-     *  Assignment 1.4
-     */
-    //ClientService.put(1, {firstName: 'Kees'})
-    //    .then(function promiseSuccessHandler(response) {
-    //        console.log(response.data);
-    //    }, function promiseErrorHandler(response) {
-    //        console.log(response);
-    //    });
     $scope.welcomeText = 'Open developer tools -> console';
 });
