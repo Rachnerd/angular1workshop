@@ -10,6 +10,7 @@ Now we also want to be able to edit existing clients in the client page.
 After we've realized the full CRUD functionality, we are going to make some
 custom directives.
 
+###Part 1
 ###2.1
 Client controller receives the correct client, but its properties aren't visualized yet.
 ```
@@ -42,3 +43,7 @@ When in edit mode, create a save button that will call the previously made save 
 Log the backend response to see if the client is updated (this time we don't have to set the client in the $scope because 
 of the two-way bind).
 ```
+
+###Part 2
+###2.5
+
