@@ -140,3 +140,5 @@ Create a .filter and give it a name.
 ```javascript
 
 ```
+##End of Assignment 2
+Assignment 3 can be found in this [branch](https://github.com/Rachnerd/angular1workshop/tree/assignment_3) (branch also includes all answers of this assignment).
