@@ -149,3 +149,6 @@ with the correct id (/client/id)
 
 Tips
 - [$location]()
+
+##End of Assignment 1
+Assignment 2 can be found in this [branch](https://github.com/Rachnerd/angular1workshop/tree/assignment_2) (branch also includes all answers of this assignment).
