@@ -50,16 +50,39 @@ In this part we're going to make some custom directives.
 Imagine you want to have a header on every page that can do stuff. You don't want duplicated HTML in your application,
 so you create an Angular Element directive.
 ```
-Create a directive called header in scripts/directives/header.js and configure it so it has an isolated scope and
-turns into an Element.
+Create a directive called vHeader in scripts/directives/header.js and configure it so it has an isolated scope and
+turns into an Element. Also create a header template in the views folder and assign the template to the directive.
 ```
 
 Tips
 ```javascript
-.directive('header', function () {
+.directive('vHeader', function () {
     return {
         restrict: 'E',
-        scope: {}
+        scope: {},
+        templateUrl: '..'
     }
 });
 ```
+
+###2.6 
+Now we can add an <v-header></v-header> element everywhere we want.
+```
+Add the v-header tag to the client template at the top.
+```
+
+###2.7
+We want our header to have a dynamic title and some redirect click events.
+```
+Let the scope expect a title attribute that binds literal.
+```
+
+Tips
+```javascript
+scope: {
+    title: '@'
+}
+```
+- Literal @
+- Two way bind =
+- Function bind & (only allows the directive to call this function on the parent)
