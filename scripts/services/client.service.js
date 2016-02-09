@@ -24,5 +24,16 @@ angular.module('vClient', [])
     this.getById = function (id) {
         return $http.get(base + '/' + id);
     };
-
+    /*
+     *  1.8
+     */
+    this.create = function (client) {
+        return $http.post(base, client);
+    };
+    /*
+        1.9
+     */
+    this.delete = function (id) {
+        return $http.delete(base + '/' + id)
+    };
 });
