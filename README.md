@@ -86,4 +86,4 @@ scope: {
 ```
 - Literal @
 - Two way bind =
-- Function bind & (only allows the directive to call this function on the parent)
+- Function bind & (only allows the directive to call this function on the parent).
