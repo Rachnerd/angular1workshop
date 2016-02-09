@@ -39,7 +39,7 @@ We want to be able to edit the remote client as well. For this we need a put met
 Create a put method in ClientService.
 ```
 Tips
-- [$http.put]()
+- [$http.put](https://docs.angularjs.org/api/ng/service/$http#put)
 
 ###2.4
 Now, while in edit mode we want to save the adjusted fields.
@@ -48,7 +48,7 @@ Use the editmode form's ng-submit directive call the save of the ClientService.
 Log the response of the server to see if you receive an updated client.
 ```
 Tips
-- [ng-submit]()
+- [ng-submit](https://docs.angularjs.org/api/ng/directive/ngSubmit)
 
 ###Part 2
 In this part we're going to make some custom directives.
