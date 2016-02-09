@@ -75,6 +75,7 @@ Add the v-header tag to the client template at the top.
 We want our header to have a dynamic title and some redirect click events.
 ```
 Let the scope expect a title attribute that binds literal.
+Render the title in the header template.
 ```
 
 Tips
