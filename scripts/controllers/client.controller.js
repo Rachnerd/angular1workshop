@@ -17,7 +17,7 @@ angular.module('myApp')
      */
     ClientService.getById($routeParams.id)
         .then(function (response) {
-            console.log(response.data);
+            $scope.client = response.data;
         })
         /*
          *  1.5
