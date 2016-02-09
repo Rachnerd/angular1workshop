@@ -30,6 +30,7 @@ contains all dependencies needed in our application so far ([angular](../master/
 the get function to log the response.
 
 ## Assignment 1
+## Part 1
 Currently the application only has one route (page). During this assignment we will add another page that retrieves a single client based on the 
 requested id. 
 
@@ -78,7 +79,7 @@ Catch the getById promise and let the controller redirect back to the home page.
 Tips
 - [$location]()
 
-## Assignment 2
+## Part 2
 Now that we setup the routes and retrieved the correct client for our client page, we want to visualize our data.
 
 The following subjects will be implemented and configured:
@@ -87,7 +88,7 @@ The following subjects will be implemented and configured:
 - [delete]()
 
 
-###2.1
+###1.6
 First we're going to visualize a list of clients on the Home page.
 ```
 Assign the remote clients to the $scope and render them in the home template with help of ng-repeat.
@@ -96,13 +97,13 @@ Assign the remote clients to the $scope and render them in the home template wit
 Tips
 - [ng-repeat]()
 
-###2.2
+###1.7
 To add a client we're going to create a form.
 ```
 Create a form with 2 inputs for firstName and lastName.
 ```
 
-###2.3
+###1.8
 Before we can add a person, we have to create a post function in the ClientService.
 ```
 Add post functionality to the ClientService and let the home controller pass it to the $scope as a create function.
@@ -113,7 +114,7 @@ gets added to the client list (in the $scope).
 Tips
 - [$http.post]()
 
-###2.4
+###1.9
 Besides adding people to our list, we also want to be able to delete them.
 ```
 Create a delete request in the ClientService. 
@@ -124,7 +125,7 @@ Tips
 - In stead of showing a delete button at every client, try to make it only visible for a selected client with help of
 [ng-show]() or [ng-if]().
 
-###2.5 
+###1.10
 Now that we can add and delete people we want to be able to edit them in our client page.
 ```
 Add a click event to every client (a button or clickable name) that redirects the page to the client route with correct id.
