@@ -31,7 +31,7 @@ angular.module('myApp')
      */
     ClientService.get()
         .then(function (response) {
-            console.log(response.data); // f12 developer tools console.
+            console.log('HomeCtrl response data', response.data); // f12 developer tools console.
         })
         .catch(function () {
             console.log('Something went wrong');

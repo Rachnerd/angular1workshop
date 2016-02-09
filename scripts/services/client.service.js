@@ -24,10 +24,5 @@ angular.module('vClient', [])
     this.getById = function (id) {
         return $http.get(base + '/' + id);
     };
-    /*
-     *  1.8
-     */
-    this.put = function (client) {
-        return $http.put(base + '/' + client.id, client);
-    };
+
 });

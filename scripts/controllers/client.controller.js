@@ -12,9 +12,17 @@ angular.module('myApp')
     })
 })
 .controller('ClientCtrl', function ($scope, ClientService, $routeParams, $location) {
-    ClientService.getById($routeParams.id).then(function (response) {
-        console.log(response.data);
-    }).catch(function () {
-        $location.path('/');
-    });
+    /*
+     *  1.4
+     */
+    ClientService.getById($routeParams.id)
+        .then(function (response) {
+            console.log(response.data);
+        })
+        /*
+         *  1.5
+         */
+        .catch(function () {
+            $location.path('/');
+        });
 });
