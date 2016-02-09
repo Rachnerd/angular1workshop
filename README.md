@@ -77,15 +77,15 @@ If we get to the client route with a non existing id, we want to redirect back t
 Catch the getById promise and let the controller redirect back to the home page.
 ```
 Tips
-- [$location]()
+- [$location](https://docs.angularjs.org/guide/$location#getter-and-setter-methods)
 
 ## Part 2
 Now that we setup the routes and retrieved the correct client for our client page, we want to visualize our data.
 
 The following subjects will be implemented and configured:
-- [Angular directives]()
-- [post]()
-- [delete]()
+- [Angular directives](https://docs.angularjs.org/guide/directive)
+- [$http.post]()
+- [$http.delete]()
 
 
 ###1.6
