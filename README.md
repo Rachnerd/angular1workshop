@@ -106,7 +106,7 @@ Create a new directive called makeRed and configure it so it works like an attri
 
 Tips
 ```javascript
-.directive('addClass', function () {
+.directive('makeRed', function () {
     return {
         restrict: 'A',
         scope: {}
